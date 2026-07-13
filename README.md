@@ -41,8 +41,15 @@ Push to `main` → the site rebuilds and deploys automatically.
 Every dated folder becomes an edition; past editions stay browsable
 under "Past mornings" at the bottom of the page.
 
-> The stories currently in `content/` are placeholders. Replace them
-> with your first real edition whenever you're ready.
+## The welcome edition
+
+`content/welcome/` is a special, undated edition — an editorial
+explaining what the paper is and why it exists. First-time visitors
+see it before anything else (tracked with a `daybreak.introSeen` flag
+in localStorage); after that they land on the latest edition, with the
+intro one click away via "about this paper" in the footer, or at
+`#/welcome`. It also stands in as the front page whenever no dated
+editions exist yet.
 
 ## One-time GitHub Pages setup
 

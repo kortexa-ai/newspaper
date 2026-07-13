@@ -3,6 +3,10 @@
 // The publishing contract (what your scheduled task must do):
 //   content/YYYY-MM-DD/<anything>.md   →  one file per story
 //
+// One special folder sits outside the dated editions:
+//   content/welcome/<anything>.md      →  the evergreen intro edition,
+//   shown to first-time visitors and linked as "about this paper".
+//
 // Frontmatter (all optional except title):
 //   title:   Story headline
 //   kicker:  Small section label (AI, Space, Open Source, ...)
@@ -42,6 +46,27 @@ function parseFrontmatter(raw) {
 
 marked.setOptions({ gfm: true, breaks: false });
 
+function buildStory(path, raw, date) {
+  const { meta, body } = parseFrontmatter(raw);
+  return {
+    id: path,
+    date,
+    title: meta.title || 'Untitled',
+    kicker: meta.kicker || '',
+    author: meta.author || '',
+    summary: meta.summary || '',
+    lead: meta.lead === true,
+    order: typeof meta.order === 'number' ? meta.order : 999,
+    html: marked.parse(body.trim()),
+    minutes: Math.max(1, Math.round(body.trim().split(/\s+/).length / 220)),
+  };
+}
+
+function sortStories(stories) {
+  stories.sort((a, b) => (b.lead ? 1 : 0) - (a.lead ? 1 : 0) || a.order - b.order || a.id.localeCompare(b.id));
+  return stories;
+}
+
 function buildEditions() {
   const byDate = new Map();
 
@@ -49,34 +74,28 @@ function buildEditions() {
     const dateMatch = path.match(/content\/(\d{4}-\d{2}-\d{2})\//);
     if (!dateMatch) continue;
     const date = dateMatch[1];
-    const { meta, body } = parseFrontmatter(raw);
-    const story = {
-      id: path,
-      date,
-      title: meta.title || 'Untitled',
-      kicker: meta.kicker || '',
-      author: meta.author || '',
-      summary: meta.summary || '',
-      lead: meta.lead === true,
-      order: typeof meta.order === 'number' ? meta.order : 999,
-      html: marked.parse(body.trim()),
-      minutes: Math.max(1, Math.round(body.trim().split(/\s+/).length / 220)),
-    };
     if (!byDate.has(date)) byDate.set(date, []);
-    byDate.get(date).push(story);
+    byDate.get(date).push(buildStory(path, raw, date));
   }
 
   const dates = [...byDate.keys()].sort(); // ascending, oldest first
   return dates
-    .map((date, i) => {
-      const stories = byDate.get(date);
-      stories.sort((a, b) => (b.lead ? 1 : 0) - (a.lead ? 1 : 0) || a.order - b.order || a.id.localeCompare(b.id));
-      return { date, number: i + 1, stories };
-    })
+    .map((date, i) => ({ date, number: i + 1, stories: sortStories(byDate.get(date)) }))
     .reverse(); // newest edition first
 }
 
+function buildWelcome() {
+  const stories = [];
+  for (const [path, raw] of Object.entries(files)) {
+    if (!/content\/welcome\//.test(path)) continue;
+    stories.push(buildStory(path, raw, null));
+  }
+  if (stories.length === 0) return null;
+  return { date: null, welcome: true, stories: sortStories(stories) };
+}
+
 export const editions = buildEditions();
+export const welcomeEdition = buildWelcome();
 
 export function formatDate(iso) {
   const [y, m, d] = iso.split('-').map(Number);

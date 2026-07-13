@@ -6,8 +6,14 @@ export default function Masthead({ edition, isLatest }) {
     <header className="masthead">
       <div className="masthead-inner">
         <p className="dateline mono">
-          {formatDate(edition.date)} · No. {edition.number}
-          {!isLatest && <span className="archive-flag"> · from the archive</span>}
+          {edition.welcome ? (
+            <>Welcome · an introduction to this paper</>
+          ) : (
+            <>
+              {formatDate(edition.date)} · No. {edition.number}
+              {!isLatest && <span className="archive-flag"> · from the archive</span>}
+            </>
+          )}
         </p>
         <h1 className="masthead-title">{SITE.masthead}</h1>
         <p className="tagline">{SITE.tagline}</p>
