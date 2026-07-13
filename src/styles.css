@@ -1,0 +1,417 @@
+/* ------------------------------------------------------------------ tokens */
+:root {
+  --ink: #1e2537;
+  --ink-soft: #4a5268;
+  --paper: rgba(252, 250, 245, 0.86);
+  --paper-edge: rgba(30, 37, 55, 0.14);
+  --gold: #c8871e;
+  --gold-bright: #f5c34d;
+  --moonlight: #f3efe6;
+  --night: #10172b;
+
+  --font-serif: 'Newsreader', 'Georgia', serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', monospace;
+
+  --measure: 38rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-serif);
+  color: var(--ink);
+  /* Static dawn gradient: visible before the renderer boots, and the
+     permanent fallback when neither WebGPU nor WebGL2 exists. */
+  background: linear-gradient(to top, #4a3449 0%, #1d2440 45%, var(--night) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* ---------------------------------------------------------------- the sky */
+.sky {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* --------------------------------------------------------------- masthead */
+.masthead {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.25rem 4rem;
+  color: var(--moonlight);
+  position: relative;
+}
+
+.dateline {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+  margin: 0 0 1.4rem;
+}
+
+.archive-flag {
+  color: var(--moonlight);
+  opacity: 0.75;
+}
+
+.masthead-title {
+  font-size: clamp(3.4rem, 12vw, 8.5rem);
+  font-weight: 340;
+  font-optical-sizing: auto;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  margin: 0;
+  font-variant-ligatures: common-ligatures;
+}
+
+.tagline {
+  font-size: clamp(1rem, 2.4vw, 1.3rem);
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.85;
+  margin: 1.2rem 0 0;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  animation: hint-drift 3.2s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+@keyframes hint-drift {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 6px);
+  }
+}
+
+/* ---------------------------------------------------------------- edition */
+.edition {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1.25rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.story {
+  background: var(--paper);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--paper-edge);
+  border-radius: 3px;
+  padding: 2.4rem 2.6rem 2.2rem;
+  box-shadow: 0 18px 50px -24px rgba(10, 14, 30, 0.55);
+}
+
+.story-lead {
+  margin-top: -8vh;
+}
+
+.story-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+
+.kicker {
+  color: var(--gold);
+  border-bottom: 2px solid var(--gold-bright);
+  padding-bottom: 2px;
+}
+
+.read-time {
+  color: var(--ink-soft);
+}
+
+.story-title {
+  font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.7rem;
+}
+
+.story-lead .story-title {
+  font-size: clamp(2.2rem, 6vw, 3.3rem);
+  font-weight: 420;
+}
+
+.story-summary {
+  font-size: 1.18rem;
+  font-style: italic;
+  font-weight: 340;
+  color: var(--ink-soft);
+  line-height: 1.45;
+  margin: 0 0 0.9rem;
+}
+
+.byline {
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 1.4rem;
+}
+
+.story-body {
+  font-size: 1.08rem;
+  line-height: 1.68;
+  font-weight: 380;
+}
+
+.story-body > p:first-of-type::first-letter {
+  font-size: 3.1em;
+  font-weight: 500;
+  float: left;
+  line-height: 0.82;
+  padding: 0.08em 0.12em 0 0;
+  color: var(--gold);
+}
+
+.story-body p {
+  margin: 0 0 1.1em;
+}
+
+.story-body a {
+  color: var(--gold);
+  text-decoration-color: var(--gold-bright);
+  text-underline-offset: 3px;
+}
+
+.story-body a:hover {
+  color: var(--ink);
+}
+
+.story-body blockquote {
+  margin: 1.4em 0;
+  padding-left: 1.2em;
+  border-left: 3px solid var(--gold-bright);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.story-body code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: rgba(30, 37, 55, 0.07);
+  padding: 0.12em 0.35em;
+  border-radius: 3px;
+}
+
+.story-body pre {
+  background: rgba(30, 37, 55, 0.07);
+  padding: 1em 1.2em;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.story-body pre code {
+  background: none;
+  padding: 0;
+}
+
+.story-body img {
+  max-width: 100%;
+  border-radius: 3px;
+}
+
+.story-body h2,
+.story-body h3 {
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 1.6em 0 0.5em;
+}
+
+.story-body hr {
+  border: none;
+  text-align: center;
+  margin: 1.8em 0;
+}
+
+.story-body hr::after {
+  content: '· · ·';
+  color: var(--gold);
+  letter-spacing: 0.6em;
+}
+
+/* ----------------------------------------------------------- scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------------------------------------------------------------- colophon */
+.colophon {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1.25rem 5rem;
+  text-align: center;
+  color: var(--ink);
+}
+
+.sun-divider {
+  font-size: 1.6rem;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+}
+
+.signoff {
+  font-size: clamp(1.3rem, 3.4vw, 1.8rem);
+  font-style: italic;
+  font-weight: 340;
+  margin: 0 0 2.6rem;
+}
+
+.archive {
+  background: var(--paper);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--paper-edge);
+  border-radius: 3px;
+  padding: 1.6rem 2rem;
+  display: inline-block;
+  text-align: left;
+}
+
+.archive-heading {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.8rem;
+}
+
+.archive-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.82rem;
+  line-height: 2;
+}
+
+.archive-list a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--paper-edge);
+}
+
+.archive-list a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold-bright);
+}
+
+.archive-current {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.fine-print {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-top: 2.8rem;
+}
+
+/* --------------------------------------------------------------- empty state */
+.empty-state {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--moonlight);
+  padding: 2rem;
+}
+
+.empty-state code {
+  font-family: var(--font-mono);
+  color: var(--gold-bright);
+}
+
+/* ----------------------------------------------------------- accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .scroll-hint {
+    animation: none;
+  }
+  .reveal {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------------- mobile */
+@media (max-width: 640px) {
+  .story {
+    padding: 1.7rem 1.4rem 1.5rem;
+  }
+  .story-lead {
+    margin-top: -4vh;
+  }
+  .edition {
+    gap: 2.2rem;
+  }
+}
