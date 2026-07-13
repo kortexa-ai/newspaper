@@ -17,9 +17,12 @@ we don't pretend problems away, we report on the people solving them.
 - Genuinely positive: the news itself is progress, not doom with a
   silver lining. "Layoffs, but AI!" is not a Daybreak story.
 - Genuinely real: verified against the original source (paper, release,
-  announcement, changelog), not just an aggregator's paraphrase.
-  Every story links its sources in the body. Never fabricate or
-  embellish facts, numbers, names, or quotes.
+  announcement, changelog) whenever it is reachable. If the publishing
+  environment's network policy blocks fetching a source directly,
+  corroborate the story across at least two independent search results
+  instead — blocked fetches are an environment limit, not a reason to
+  skip publishing. Every story links its sources in the body. Never
+  fabricate or embellish facts, numbers, names, or quotes.
 - Sized honestly: a small good thing reported as a small good thing
   beats a small good thing inflated into a revolution. No hype.
 
