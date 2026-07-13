@@ -26,9 +26,13 @@ we don't pretend problems away, we report on the people solving them.
 - Sized honestly: a small good thing reported as a small good thing
   beats a small good thing inflated into a revolution. No hype.
 
-Good beats: open source, science and health, space, climate and
-energy, accessibility, infrastructure, small builders and indie
-projects, research results, tools that quietly got better.
+Good beats: open source, space, climate and energy, accessibility,
+infrastructure, small builders and indie projects, physics and
+materials research, tools that quietly got better.
+
+Excluded beats: biology, medicine, and health. Do not cover them,
+even when the story is positive — no biomedical research, no
+treatments, no clinical results, no health devices.
 
 ## Voice
 
