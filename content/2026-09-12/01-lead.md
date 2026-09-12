@@ -1,0 +1,20 @@
+---
+title: A pipe now runs from a Dutch fertilizer plant to a seabed in Norway, and Europe's carbon has somewhere to go
+kicker: Climate
+author: The Editors
+summary: Yara's Sluiskil ammonia plant is now capturing 800,000 tonnes of CO2 a year and shipping it to Norway for permanent burial — the first complete cross-border carbon capture chain of its kind in Europe.
+lead: true
+order: 1
+---
+
+Carbon capture has spent years as a technology of PowerPoint slides — plausible on paper, rare in concrete and steel. On September 7, that changed by a considerable margin. Europe's largest industrial carbon capture and storage facility was officially inaugurated at Yara International's ammonia and fertilizer plant in Sluiskil, in the Dutch province of Zeeland, and it is not a pilot. It is a working piece of industrial plumbing, moving real tonnage, on a real schedule ([Yara](https://www.yara.com/corporate-releases/europes-largest-carbon-capture-facility-officially-inaugurated-at-yara-sluiskil-in-the-netherlands/)).
+
+The mechanics are almost quaint in their simplicity, which is rather the point. Ammonia production at Sluiskil strips CO2 out as a byproduct; the new facility captures and liquefies up to 800,000 tonnes of it a year, instead of venting it to the sky. That liquefied CO2 is loaded onto Northern Lights vessels and shipped roughly 800 kilometers north to Øygarden, on Norway's west coast, where it is injected about 2,600 meters beneath the seabed for permanent storage. Over 15 years, the project is expected to bury around 12 million tonnes — equivalent to taking a few million cars off the road for a year, every year, for a decade and a half.
+
+What makes this more than a big number is the shape of it. This is the first complete cross-border value chain in Europe built specifically to capture industrial CO2 in one country, transport it by sea, and permanently store it in another — a genuine piece of shared infrastructure rather than a single company's isolated project. The European Commission co-funded the effort, and its inauguration drew an unusually senior crowd for an industrial ribbon-cutting: Norwegian Prime Minister Jonas Gahr Støre, Dutch Prime Minister Rob Jetten, and EU Climate Commissioner Wopke Hoekstra all attended alongside Yara CEO Svein Tore Holsether.
+
+"Large-scale industrial decarbonization is possible today," Holsether said, framing the project as proof that cutting emissions and keeping "industry, jobs and critical value chains in Europe" aren't in tension with each other — a pointed answer to the usual argument that decarbonization means offshoring heavy industry to wherever it's cheapest to pollute. Hoekstra put the significance in more institutional terms: the project, he said, "shows what is possible when innovation and cross-border cooperation come together."
+
+It's worth being honest about what this is and isn't. Carbon capture remains expensive, and critics of the technology — including some within the EU itself — have argued it risks becoming a way to delay harder decisions rather than a genuine substitute for cutting emissions at the source. Ammonia production will still need decarbonizing on the front end eventually, not just scrubbed on the back end. Storage capacity worldwide is nowhere near the hundreds of gigatonnes climate scenarios eventually call for, and Sluiskil-to-Øygarden, however large by today's standards, is one link in a chain that needs to be built out enormously.
+
+But infrastructure has to start somewhere, and the first working example of a cross-border capture-transport-storage chain matters disproportionately, because it answers the question that has stalled dozens of similar projects on paper: does the whole pipeline — the capture plant, the shipping fleet, the injection wells, the permitting across two national governments and the EU — actually fit together and run. As of September 7, in this one case, it does. Every project after this one gets to copy a blueprint instead of drawing one from scratch.
