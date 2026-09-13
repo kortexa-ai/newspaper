@@ -1,0 +1,20 @@
+---
+title: A Harvard lab used sound to make a fragile quantum memory last three times longer
+kicker: Science
+author: The Editors
+summary: By continuously bathing a diamond-based qubit in mechanical vibrations, Harvard engineers stretched its coherence time roughly threefold — a small trick with big implications for building quantum networks out of sound instead of light.
+lead: true
+order: 1
+---
+
+Quantum computers have a memory problem. The delicate quantum states that make them powerful — spins, superpositions, entanglement — are also spectacularly easy to disturb. Stray heat, stray light, even the passage of time itself, cause them to "decohere" and lose the information they carry, usually in a fraction of a second. Much of quantum engineering, for three decades now, has been a long argument with that fragility. This week, a team at Harvard's John A. Paulson School of Engineering and Applied Sciences added a genuinely clever move to that argument: instead of fighting the noise, they used sound to drown it out.
+
+The result, published in *Nature Physics* ([DOI: 10.1038/s41567-026-03369-2](https://doi.org/10.1038/s41567-026-03369-2)) and described by Harvard SEAS ([seas.harvard.edu](https://seas.harvard.edu/news/qubits-dressed-success)) and ScienceDaily ([sciencedaily.com](https://www.sciencedaily.com/releases/2026/09/260911214245.htm)), comes from the lab of Marko Lončar, the Tiantsai Lin Professor of Electrical Engineering. His team, led by Eliza Cornell — a Ph.D. graduate of the lab now doing postdoctoral work at Boston University — and former postdoctoral scholar Zhujing Xu, worked with a silicon-vacancy qubit: a single defect in diamond that acts as a tiny, controllable quantum spin.
+
+The trick was to continuously drive that spin with mechanical vibrations — phonons, the sound-wave equivalent of photons — rather than the pulsed microwave fields more commonly used to manipulate qubits. That constant, gentle mechanical "dressing" effectively transforms the qubit into a new state that is far less sensitive to the magnetic and electric noise of its surroundings. The payoff was a roughly threefold extension of the qubit's coherence time — the window during which it reliably holds information before the surrounding world scrambles it.
+
+"We are solving two problems," Cornell said. "We want the spin to have strong interaction with phonons, and we want the spin to have a long coherence time." Those two goals have historically been in tension: a spin coupled strongly enough to sound waves to be useful for communication tends to be exposed to more noise, not less. The Harvard result shows a way to have both at once — a spin that talks to phonons easily and forgets what it's saying more slowly.
+
+Why sound, rather than light? Because at a given frequency, phonons have much shorter wavelengths than photons, which means the hardware needed to guide and control them can be built dramatically smaller — a genuine advantage for cramming quantum components onto a chip. Phonons also couple naturally to solid-state spins like the one in this experiment, and to electromagnetic fields, making them a useful go-between in hybrid quantum systems that mix different types of qubits. The Harvard team's next step is to combine this coherence-protecting trick with phononic cavities — tiny engineered structures that funnel and focus sound waves — with an eye toward all-mechanical quantum networks: chips that use vibration, not light, to link qubits together.
+
+None of this makes a fault-tolerant quantum computer arrive any sooner by itself; a threefold improvement in one lab's diamond qubit is an incremental step, not a finish line, and coherence times still need to grow by orders of magnitude for many applications. But incremental is how this field actually advances, one clever reframing of an old problem at a time. Teaching a qubit to steady itself by listening to a hum, rather than blocking out all noise entirely, is the kind of quietly elegant idea that tends to outlive the hardware it was first tested on.

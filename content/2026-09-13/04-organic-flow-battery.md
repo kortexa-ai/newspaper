@@ -1,0 +1,15 @@
+---
+title: A battery startup and a Japanese energy giant are teaming up on grid storage that runs on organic chemistry
+kicker: Climate
+author: The Editors
+summary: XL Batteries and ENEOS Holdings signed a memorandum of understanding to study commercializing XL's organic flow battery, a long-duration storage technology built from abundant, non-toxic materials rather than mined critical minerals.
+order: 4
+---
+
+Long-duration energy storage — batteries that can discharge for many hours, not just the minute-scale bursts most grid batteries provide — is one of the harder problems standing between today's grid and one running mostly on solar and wind. Lithium-ion batteries are excellent at short bursts but expensive to scale up for duration; the alternatives that can go the distance have tended to rely on scarce or corrosive materials. This week, a small California-based startup and one of Japan's largest energy companies agreed to test whether a different chemistry can close that gap.
+
+XL Batteries and ENEOS Holdings signed a memorandum of understanding to jointly study commercializing XL's organic flow battery technology, with ENEOS HD facilitating a feasibility study aimed at large-scale deployment in Japan ([Interesting Engineering](https://interestingengineering.com/energy/xl-batteries-eneos-organic-flow-battery-grid-storage); [Energy Tech](https://www.energytech.com/energy-storage/news/55403861/energy-storage-startup-xl-batteries-exploring-collaboration-on-li-ion-alternatives-in-japan)). Flow batteries store energy in liquid electrolytes held in external tanks, pumped through an electrochemical cell to charge or discharge — a design that lets power output and storage duration scale independently of each other, since adding capacity is mostly a matter of adding bigger tanks. XL's version replaces the vanadium or other scarce, often corrosive compounds used in conventional flow batteries with proprietary organic electrolytes the company describes as abundant and non-toxic.
+
+"XL Batteries' technology is purpose-built to meet the growing need for long-duration energy storage, and this collaboration with ENEOS HD will help accelerate our ability to scale," said XL Batteries CEO Tom Sisto. The companies are pitching the technology at grid operators, microgrids, data centers, and industrial users who need storage that can cycle frequently and hold charge for hours at a stretch — exactly the profile needed to smooth out the gaps left by solar and wind generation.
+
+It's an early-stage agreement, not a finished plant: no deployment capacity, site, or commercial timeline has been announced, and the joint feasibility study is only just beginning. But the pairing is a sensible one. XL Batteries brings a chemistry designed from the outset to sidestep the critical-minerals bottleneck that increasingly complicates battery manufacturing; ENEOS brings the balance-sheet and grid relationships of a company already central to Japan's energy system. If the chemistry holds up outside the lab, this is the kind of quiet partnership that turns a promising material into something a utility will actually buy.
